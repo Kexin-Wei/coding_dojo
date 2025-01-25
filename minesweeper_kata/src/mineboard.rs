@@ -130,7 +130,7 @@ mod tests {
         let number_board = generate_mine_board_with_numbers(&board);
         assert_eq!(
             minesweeper_board_to_string(&number_board),
-            "*20\n*31\n12*\n"
+            "*2.\n*31\n12*\n"
         );
     }
 }
