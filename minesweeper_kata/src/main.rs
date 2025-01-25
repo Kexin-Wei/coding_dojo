@@ -11,8 +11,12 @@ fn generate_number_mine_board(
     cols: usize,
     mines: &Vec<(usize, usize)>,
 ) -> Vec<Vec<char>> {
-    let mine_board = generate_mine_board(rows, cols, mines);
-    generate_mine_board_with_numbers(&mine_board)
+    let mines_board = generate_mine_board(rows, cols, mines);
+    println!(
+        "The minesweeper board is created: \n{}",
+        minesweeper_board_to_string(&mines_board)
+    );
+    generate_mine_board_with_numbers(&mines_board)
 }
 
 fn main() {
@@ -23,13 +27,7 @@ fn main() {
 
     let mines = get_mine_location();
 
-    let mines_board = generate_mine_board(rows, cols, &mines);
-    println!(
-        "The minesweeper board is created: \n{}",
-        minesweeper_board_to_string(&mines_board)
-    );
-
-    let number_board = generate_mine_board_with_numbers(&mines_board);
+    let number_board = generate_number_mine_board(rows, cols, &mines);
     println!(
         "The minesweeper board with numbers is created: \n{}",
         minesweeper_board_to_string(&number_board)
